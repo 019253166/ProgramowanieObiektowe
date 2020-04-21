@@ -27,9 +27,10 @@ void zmien_zawartosc_komorki(int** tablica, int w_komorka, int k_komorka, int zm
 void wyswietlanie_tablicy(int** tablica, int wiersze, int kolumny){
 	
 	for(int x=0; x<wiersze; x++){
-		for(int y=0;y<wiersze;y++){
+		for(int y=0;y<kolumny;y++){
 			cout<<tablica[x][y]<<"\t";
 		}
+		cout<<endl;
 	}
 }
 
@@ -61,4 +62,102 @@ void Tab_do_pliku(int wiersze, int kolumny, int ** tablica){
 			do_pliku<<endl;
 		}
 	do_pliku.close();
+}
+
+void Suma_W(int ** tablica, int wiersze, int kolumny){
+	cout<<"Wybierz wiersz do sumowania"<<endl;
+	int nr_w;
+	cin>>nr_w;
+	int suma_w=0;
+	for(int i=0;i<kolumny;i++){
+	suma_w+=tablica[nr_w-1][i];
+	}
+	cout<<suma_w<<endl;
+}
+
+void Suma_K(int ** tablica, int wiersze, int kolumny){
+	cout<<"Wybierz kolumnę do sumowania"<<endl;
+	int nr_k=0;
+	cin>>nr_k;
+	int suma_k=0;
+	for(int i=0;i<wiersze;i++){
+		suma_k+=tablica[i][nr_k-1];
+	}
+cout<<suma_k<<endl;
+}
+
+void Min_K(int **tablica, int wiersze, int kolumny){
+	cout<<"Wybierz kolumnę"<<endl;
+	int nr_k=0;
+	cin>>nr_k;
+	int min_k=tablica[0][nr_k-1];
+	for(int i=0;i<wiersze;i++){
+		if(min_k>tablica[i][nr_k-1]){
+			min_k=tablica[i][nr_k-1];
+		}
+	}
+	cout<<min_k<<endl;
+}
+
+void Max_K(int **tablica, int wiersze, int kolumny){
+	cout<<"Wybierz kolumnę"<<endl;
+	int nr_k=0;
+	cin>>nr_k;
+	int max_k=tablica[0][nr_k-1];
+	for(int i=0;i<wiersze;i++){
+		if(max_k<tablica[i][nr_k-1]){
+			max_k=tablica[i][nr_k-1];
+		}
+	}
+	cout<<max_k<<endl;
+}
+
+void Min_W(int **tablica, int wiersze, int kolumny){
+	cout<<"Wybierz wiersz"<<endl;
+	int nr_w=0;
+	cin>>nr_w;
+	int min_w=tablica[nr_w-1][0];
+	for(int i=0;i<kolumny;i++){
+		if(min_w>tablica[nr_w-1][i]){
+			min_w=tablica[nr_w-1][i];
+		}
+	}
+	cout<<min_w<<endl;
+}
+
+void Max_W(int **tablica, int wiersze, int kolumny){
+	cout<<"Wybierz wiersz"<<endl;
+	int nr_w=0;
+	cin>>nr_w;
+	int max_w=tablica[nr_w-1][0];
+	for(int i=0;i<kolumny;i++){
+		if(max_w<tablica[nr_w-1][i]){
+			max_w=tablica[nr_w-1][i];
+		}
+	}
+	cout<<max_w<<endl;
+}
+
+void Srednia_K(int ** tablica, int wiersze, int kolumny){
+	cout<<"Wybierz kolumnę"<<endl;
+	int nr_k=0;
+	cin>>nr_k;
+	int suma_k=0;
+	for(int i=0;i<wiersze;i++){
+		suma_k+=tablica[i][nr_k-1];
+	}
+	int srednia_k=suma_k/wiersze;
+	cout<<srednia_k;
+}
+
+void Srednia_W(int ** tablica, int wiersze, int kolumny){
+	cout<<"Wybierz wiersz"<<endl;
+	int nr_w=0;
+	cin>>nr_w;
+	int suma_w=0;
+	for(int i=0;i<kolumny;i++){
+		suma_w+=tablica[nr_w-1][i];
+	}
+	int srednia_w=suma_w/kolumny;
+	cout<<srednia_w;
 }

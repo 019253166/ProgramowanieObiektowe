@@ -26,4 +26,21 @@ void Tab_z_pliku(int ** &tablica, int *wiersze, int *kolumny);
 
 void Tab_do_pliku(int wiersze, int kolumny, int ** tablica);
 
+void Suma_W(int ** tablica, int wiersze, int kolumny);
+
+void Suma_K(int ** tablica, int wiersze, int kolumny);
+
+void Min_K(int **tablica, int wiersze, int kolumny);
+
+void Max_K(int **tablica, int wiersze, int kolumny);
+
+void Min_W(int **tablica, int wiersze, int kolumny);
+
+void Max_W(int **tablica, int wiersze, int kolumny);
+
+void Srednia_K(int ** tablica, int wiersze, int kolumny);
+
+void Srednia_W(int ** tablica, int wiersze, int kolumny);
+
+
 #endif
