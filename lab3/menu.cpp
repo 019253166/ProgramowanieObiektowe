@@ -23,7 +23,7 @@ void wyswietlanie_menu(){
 }
 
 
-void przetworz_wybor(int wybor, Tablica arr){
+void przetworz_wybor(int wybor, Tablica &arr){
 	int w_komorka=0;
 	int k_komorka=0;
 	int zmiana=0;
@@ -102,7 +102,7 @@ void wybierz_funkcje(int *wybor){
 	cin>>*wybor;
 	}
 
-void petla_menu(Tablica arr){
+void petla_menu(Tablica &arr){
 	int wybor = 0;
 	while(wybor!=14){
 	wyswietlanie_menu();

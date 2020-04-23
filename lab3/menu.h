@@ -12,10 +12,10 @@ void wybierz_funkcje(int *wybor);
 
 /** funkcja wczytujaca wybor uzytkownika
 * @param wybor wybor uzytkownika */
-void pretworz_wybor(int wybor, Tablica arr);
+void pretworz_wybor(int wybor, Tablica &arr);
 
 /** funkcja petli dla menu
 * @param arr tablica na ktorej program bedzie pracowac */
-void petla_menu(Tablica arr);
+void petla_menu(Tablica &arr);
 
 #endif

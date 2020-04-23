@@ -2,7 +2,6 @@
 #include<fstream>
 #include "menu.h"
 #include "tablica.h"
-#include "struktura.h"
 using namespace std;
 
 int main(){
@@ -10,7 +9,6 @@ int main(){
 	Tablica arr;
 	arr.wiersze=0;
 	arr.kolumny=0;
-	Tab_z_pliku(&arr);
 	petla_menu(arr);	
 
 	
