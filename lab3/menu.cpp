@@ -1,6 +1,7 @@
 #include<iostream>
 #include "menu.h"
 #include "tablica.h"
+#include "tablica_wysw.h"
 using namespace std;
 
 
@@ -29,16 +30,22 @@ void przetworz_wybor(int wybor, Tablica &arr){
 	int zmiana=0;
 	int Nowe_wier=0;
 	int Nowe_kol=0;
+	int nr_w=0;
+	int nr_k=0;
+	int err=0;
 	switch(wybor){
 		case 1: 
 			cout<<"Wybrałeś wczytanie tablicy z pliku"<<endl;
-			Tab_z_pliku(&arr);
+			err=Tab_z_pliku(&arr);
+			if(err){
+				cout<<"Brak dostępu do pliku"<<endl;
+			}
 		break;
 		case 2:
 			cout<<"Wybrałeś Zmianę rozmiaru tablicy"<<endl;
 			cin>>Nowe_wier;
 			cin>>Nowe_kol;
-			zmien_rozmiar(&arr, Nowe_wier, Nowe_kol);
+			zmien_rozmiar(arr, Nowe_wier, Nowe_kol);
 		break;
 		case 3:
 			cout<<"Wybrałeś zmianę zawartości tablicy"<<endl;
@@ -49,7 +56,10 @@ void przetworz_wybor(int wybor, Tablica &arr){
 			cin>>k_komorka;
 			cout<<"Co wstawić w to pole?"<<endl;
 			cin>>zmiana;
-			zmien_zawartosc_komorki(arr, w_komorka, k_komorka, zmiana);
+			err=zmien_zawartosc_komorki(arr, w_komorka, k_komorka, zmiana);
+			if(err){
+				cout<<"Wskazano niepoprawną komórkę"<<endl;
+			}
 		break;
 		case 4:
 			cout<<"Wybrałeś wyświetlenie tablicy"<<endl;
@@ -57,36 +67,76 @@ void przetworz_wybor(int wybor, Tablica &arr){
 		break;
 		case 5:
 			cout<<"Wybrałeś sumowanie według kolumny"<<endl;
-			Suma_K(arr);
+			cout<<"Wybierz kolumnę do sumowania"<<endl;
+			cin>>nr_k;
+			err=Suma_K(arr, nr_k);
+			if(err){
+				cout<<"Wskazano niepoprawną kolumnę"<<endl;
+			}
 		break;
 		case 6:
 			cout<<"Wybrałeś wartość najmniejszą w kolumnie"<<endl;
-			Min_K(arr);
+			cout<<"Wybierz kolumnę"<<endl;
+			cin>>nr_k;
+			err=Min_K(arr, nr_k);
+			if(err){
+				cout<<"Wskazano niepoprawną kolumnę"<<endl;
+			}
 		break;
 		case 7:
 			cout<<"Wybrałeś wartość największą w kolumnie"<<endl;
-			Max_K(arr);
+			cout<<"Wybierz kolumnę"<<endl;
+			cin>>nr_k;
+			err=Max_K(arr, nr_k);
+			if(err){
+				cout<<"Wskazano niepoprawną kolumnę"<<endl;
+			}
 		break;
 		case 8:
 			cout<<"Wybrałeś wartość średnią w kolumnie"<<endl;
-			Srednia_K(arr);
+			cout<<"Wybierz kolumnę"<<endl;
+			cin>>nr_k;
+			err=Srednia_K(arr, nr_k);
+			if(err){
+				cout<<"Wskazano niepoprawną kolumnę"<<endl;
+			}
 		break;
 		case 9:
 			cout<<"Wybrałeś sumowanie według wiersza"<<endl;
-			Suma_W(arr);
+			cout<<"Wybierz wiersz do sumowania"<<endl;
+			cin>>nr_w;
+			err=Suma_W(arr, nr_w);
+			if(err){
+				cout<<"Wskazano niepoprawny wiersz"<<endl;
+			}
 		break;
 		case 10:
 			cout<<"Wybrałeś wartość najmniejszą w wierszu"<<endl;
-			Min_W(arr);
+			cout<<"Wybierz wiersz"<<endl;
+			cin>>nr_w;
+			err=Min_W(arr, nr_w);
+			if(err){
+				cout<<"Wskazano niepoprawny wiersz"<<endl;
+			}
 
 		break;
 		case 11:
 			cout<<"Wybrałeś wartość największą w wierszu"<<endl;
-			Max_W(arr);
+			cout<<"Wybierz wiersz"<<endl;
+			cin>>nr_w;
+			err=Max_W(arr, nr_w);
+			if(err){
+				cout<<"Wskazano niepoprawny wiersz"<<endl;
+			}
 		break;
 		case 12:
 			cout<<"Wybrałeś wartość średnią w wierszu"<<endl;
-			Srednia_W(arr);
+			cout<<"Wybierz wiersz"<<endl;
+			cin>>nr_w;
+			err=Srednia_W(arr, nr_w);
+			if(err){
+				cout<<"Wskazano niepoprawny wiersz"<<endl;
+			}
 		break;
 		case 13:
 			cout<<"Wybrałeś zapisanie tablicy do pliku"<<endl;
