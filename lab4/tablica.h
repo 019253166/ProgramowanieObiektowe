@@ -3,7 +3,7 @@
 #include<iostream>
 #include<fstream>
 using namespace std;
-/** Struktura przechowująca tablicę, ilość wierszy oraz ilość kolumn
+/** Klasa przechowująca tablicę dwuwymiarową, ilość wierszy i ilość kolumn oraz funkcje operujące na tablicy
 */
 class Tablica{
 public:
@@ -26,19 +26,18 @@ int zmien_zawartosc_komorki(int w_komorka, int k_komorka, int zmiana);
 
 
 /** Funkcja wczytująca dane z pliku
-* @param[in,out] Tablica * arr - tablica do której wczytujemy dane
 * @return 0 w przypadku powodzenia lub -1 w przypadku błędu w otworzeniu pliku
 */
 int Tab_z_pliku();
 
 /** Funkcja zapisująca zawartość tablicy do pliku
-* @param[in] Tablica arr - tablica z której zapisujemy dane
 * @return - 0 w przypadku powodzenia lub -1 w przypadku błędy w otworzeniu pliku
 */
 int Tab_do_pliku();
 
 /** Poniższe funkcje wykonują obliczenia na wierszach i kolumnach
-* @param Tablica arr tablica wraz z jej rozmiarem - liczbą wierszy i kolumn
+* @param[in] nr_w - numer wiersza
+* @param[in] nr_k - numer kolumny
 * @return - 0 w przypadku powodzenia lub -1 w przypadku podania nieistniejącego wiersza lub kolumny
 */
 int Suma_W(int nr_w);
@@ -57,6 +56,8 @@ int Srednia_K(int nr_k);
 
 int Srednia_W(int nr_w);
 
+/** Funkcja wyświetlająca tablicę
+*/
 void wyswietlanie_tablicy();
 
 private:
