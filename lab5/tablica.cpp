@@ -330,11 +330,10 @@ void Tablica::wyswietlanie_tablicy_tekst(){
 }
 
 Tablica::~Tablica(){
-	cout<<tablica[1][1].liczba;
-	for(int x=0;x<kolumny;x++){
+	
+	for(unsigned int x=0;x<kolumny;x++){
 		delete[] tablica[x];
 	}
 	
 	delete[] tablica;
-	cout<<tablica[1][1].liczba;
 }
