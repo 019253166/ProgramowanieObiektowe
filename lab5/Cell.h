@@ -5,9 +5,12 @@
 using namespace std;
 class Cell
 {
+private:
+int liczba;
+string tekst;
 public:
-	int liczba;
-	string tekst;
+	int zwroc_liczba(){return liczba;}
+	string zwroc_tekst(){return tekst;}
 	Cell(){
 	liczba=0;
 	tekst="";
