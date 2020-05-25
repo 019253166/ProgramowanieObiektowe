@@ -9,8 +9,8 @@ private:
 int liczba;
 string tekst;
 public:
-	int zwroc_liczba(){return liczba;}
-	string zwroc_tekst(){return tekst;}
+	int& zwroc_liczba(){return liczba;}
+	string& zwroc_tekst(){return tekst;}
 	Cell(){
 	liczba=0;
 	tekst="";
