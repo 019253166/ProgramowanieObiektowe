@@ -1,5 +1,5 @@
-#ifndef KOMORKA_H
-#define KOMORKA_H
+#ifndef Cell_H
+#define Cell_H
 #include <iostream>
 #include <string>
 using namespace std;
