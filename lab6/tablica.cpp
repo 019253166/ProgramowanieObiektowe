@@ -398,10 +398,14 @@ void Tablica::wyswietlanie_tablicy_tekst(){
 Tablica::~Tablica(){
 	
 	for(int x=0;x<kolumny;x++){
+		for(int y=0;y<wiersze;y++){
+			delete tablica[x][y];
+		}
 		delete[] tablica[x];
 	}
 	
 	delete[] tablica;
+	delete[] jaka_kolumna;
 }
 
 void Tablica::utworz_tablice(int Nowe_wier, int Nowe_kol){
