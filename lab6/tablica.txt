@@ -1,0 +1,7 @@
+4
+4
+int int int string
+1 23 5 raz
+2 35 8 dwa
+32 18 12 trzy
+1 2 3 cztery

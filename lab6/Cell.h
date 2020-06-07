@@ -1,59 +1,62 @@
-#ifndef Cell_H
-#define Cell_H
+#ifndef CELL_H
+#define CELL_H
 #include <iostream>
 #include <string>
 using namespace std;
 class Cell
 {
-
 public:
-
-	enum Type{
-		UNKNOWN, INT, STRING
-	};
-	virtual string zwroc_wartosc()=0;
-	Type get_type(){
-		return cell_type;
-	}
-	Cell(){
-		cell_type=UNKNOWN;
-	}
-	virtual void ustaw_wartosc(const string & nowa_wartosc) =0;
-protected:
-	Type cell_type;
-
+	virtual int zwroc_liczba()=0;
+	virtual string zwroc_tekst()=0;
+	virtual int ustaw_wartosc(int nowa_wartosc)=0;
+	virtual int ustaw_wartosc(string nowa_wartosc)=0;
 	
-};	
+};
+	
 
-class Cell_Int: public Cell {
+class Cell_Int: public Cell
+{
+private:
+	int liczba;
 public:
-	Cell_Int(){
-		liczba=0;
-		cell_type = INT;
+	virtual int zwroc_liczba(){
+		return liczba;
 	}
-	virtual string zwroc_wartosc(){
+	virtual string zwroc_tekst(){
 		return to_string(liczba);
 	}
-	void ustaw_wartosc(const string & nowa_wartosc){
-		liczba=stoi(nowa_wartosc);
+	virtual int ustaw_wartosc(int nowa_wartosc){
+		liczba=nowa_wartosc;
+		return 0;
 	}
-private: 
-	int liczba;
+	virtual int ustaw_wartosc(string nowa_wartosc){
+		return -1;
+	}
+	Cell_Int(){
+		liczba=0;
+	}
 };
 
-class Cell_String:public Cell {
-public:
-	Cell_String(){
-		tekst=" ";
-		cell_type=STRING;
-	}
-	virtual string zwroc_wartosc(){
-		return tekst;
-	}
-	void ustaw_wartosc(const string & nowa_wartosc){
-		tekst=nowa_wartosc;
-	}
+class Cell_String: public Cell
+{
 private:
 	string tekst;
+public:
+	virtual int zwroc_liczba(){
+		return 0;
+	}
+	virtual string zwroc_tekst(){
+		return tekst;
+	}
+	virtual int ustaw_wartosc(int nowa_wartosc){
+		return 0;
+	}
+	virtual int ustaw_wartosc(string nowa_wartosc){
+		tekst=nowa_wartosc;
+		return -1;
+	}
+	Cell_String(){
+		tekst="pusto";
+	}
 };
 #endif
