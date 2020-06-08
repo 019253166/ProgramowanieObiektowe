@@ -62,7 +62,6 @@ int Srednia_W(int nr_w);
 */
 void wyswietlanie_tablicy();
 
-void zmien_rozmiar_tekst(int Nowe_wier, int Nowe_kol);
 
 int zmien_zawartosc_komorki_tekst(int w_komorka, int k_komorka, string zmiana);
 
@@ -72,9 +71,13 @@ int Tab_do_pliku_tekst();
 
 void wyswietlanie_tablicy_tekst();
 
+/** Metoda tworząca nową tablicę o zadanych rozmiarach
+@param[in] Nowe_wier - liczba wierszy
+@param[in] Nowe_kol - liczba kolumn
+*/
 void utworz_tablice(int Nowe_wier, int Nowe_kol);
 
-
+/* destruktor klasy usuwający z pamięci obiekty utworzone dynamicznie */
 ~Tablica();
 private:
 	

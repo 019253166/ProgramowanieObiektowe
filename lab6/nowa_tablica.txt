@@ -1,8 +1,6 @@
-5
-8
-int 	int 	int 	string 	int 	string 	int 	string 	
-1	23	5	raz	0	pusto	0	pusto	
-2	35	8	dwa	0	pusto	0	pusto	
-32	18	12	trzy	0	pusto	69	pusto	
-1	2	3	cztery	0	pusto	0	pusto	
-0	0	0	pusto	0	pusto	0	pusto	
+3
+7
+int 	string 	string 	string 	int 	int 	string 	
+0	pusto	pusto	pusto	0	0	pusto	
+0	test	pusto	pusto	0	0	pusto	
+0	pusto	pusto	pusto	11	0	pusto	

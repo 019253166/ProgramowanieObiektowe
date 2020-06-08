@@ -18,7 +18,7 @@ void Tablica::zmien_rozmiar(int Nowe_wier, int Nowe_kol){
 			if(x<kolumny){
 				tymczasowa_jaka_kolumna[x]=jaka_kolumna[x];
 			}
-			else{ cout<<"Podaj typ dodatkowej kolumn"<<endl;
+			else{ cout<<"Podaj typ dodatkowej kolumny"<<endl;
 			cin>>tymczasowa_jaka_kolumna[x];
 			
 			}
@@ -52,6 +52,7 @@ void Tablica::zmien_rozmiar(int Nowe_wier, int Nowe_kol){
 				}
 			}
 		}
+		
 	}
 	else{
 		for(int x=0; x<kolumny; x++){
